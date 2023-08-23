@@ -8,6 +8,10 @@ import { PokemonsService } from './services/pokemons.service';
 })
 export class AppComponent{
   title = 'helpers-front';
- constructor (private pokemonsService:PokemonsService){}
+ constructor (private pokemonsService:PokemonsService){
+  
+
+  
+ }
 
 }

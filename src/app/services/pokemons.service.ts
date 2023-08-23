@@ -5,16 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PokemonsService {
-
-  constructor(private httpClient:HttpClient) { 
-    this.ListaPokemons();
+  get(): import("../component/homepage/homepage.component").HomepageComponent {
+    throw new Error('Method not implemented.');
   }
- async ListaPokemons() {
-  const requisicao = await this.httpClient
-   this.httpClient.get<any>('https://pokeapi.co/api/v2/berry-firmness/{id ou nome}/').toPromise();
-   
-   console.log(requisicao);
-   
+
+  constructor(private httpClient:HttpClient) {
+
+  }
+   ListaPokemons() {
+   return this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon/')
+    
   }
 
 }

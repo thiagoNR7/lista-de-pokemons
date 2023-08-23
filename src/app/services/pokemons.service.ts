@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PokemonsService {
-  get(): import("../component/homepage/homepage.component").HomepageComponent {
-    throw new Error('Method not implemented.');
-  }
+  
 
   constructor(private httpClient:HttpClient) {
 

@@ -11,9 +11,9 @@ export class HomepageComponent {
 pokemons = ['pikachu, charmander, raiochu, venosaur'];
   get: any;
 
-constructor(private httpClient: HttpClient){}
+constructor(private pokemonsService: PokemonsService){}
 ngOnInit(){
- 
+ this.pokemonsService.ListaPokemons()
 }
 
 

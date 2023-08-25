@@ -14,6 +14,9 @@ pokemons = ['pikachu, charmander, raiochu, venosaur'];
 
 constructor(private pokemonsService: PokemonsService){}
 ngOnInit(): void{
-this.pokemonsService.ListaPokemons().subscribe()
+this.pokemonsService.ListaPokemons().subscribe(() => this.pokemonsService)
+console.log('https://pokeapi.co/api/v2/pokemon/')
 }
+
+
 }

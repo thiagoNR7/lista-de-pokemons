@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit} from '@angular/core';
+import { Subscriber, subscribeOn } from 'rxjs';
 import { PokemonsService } from 'src/app/services/pokemons.service';
 
 @Component({
@@ -9,12 +10,10 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 })
 export class HomepageComponent {
 pokemons = ['pikachu, charmander, raiochu, venosaur'];
-  get: any;
+  pokemon: any;
 
 constructor(private pokemonsService: PokemonsService){}
-ngOnInit(){
- this.pokemonsService.ListaPokemons()
+ngOnInit(): void{
+this.pokemonsService.ListaPokemons().subscribe()
 }
-
-
 }

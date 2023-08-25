@@ -13,8 +13,8 @@ export class PokemonsService {
  
 
  
-  ListaPokemons(): Observable<any>{
-   return this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon/')
+  ListaPokemons(): Observable <any>{
+return this.httpClient.get('https://pokeapi.co/api/v2/pokemon/')
     
   }
 

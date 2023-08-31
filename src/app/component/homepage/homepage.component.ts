@@ -9,9 +9,7 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent {
-pokemons = ['pikachu, charmander, raiochu, venosaur'];
-  pokemon: any;
-
+  dadosDaAPI = 'https://pokeapi.co/api/v2/pokemon/'
 constructor(private pokemonsService: PokemonsService){}
 ngOnInit(): void{
 this.pokemonsService.ListaPokemons().subscribe(pokemonsService => console.log(pokemonsService))

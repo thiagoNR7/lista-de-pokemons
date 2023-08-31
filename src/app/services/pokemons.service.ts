@@ -9,9 +9,7 @@ export class PokemonsService {
  readonly apiURL:  string | undefined
 
 
-  constructor(private httpClient:HttpClient) { 
- this.apiURL == 'https://pokeapi.co/api/v2/pokemon/';
-  }
+  constructor(private httpClient:HttpClient) {}
  
   ListaPokemons(): Observable <any>{
 return this.httpClient.get('https://pokeapi.co/api/v2/pokemon/')

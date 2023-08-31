@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PokemonsService } from 'src/app/services/pokemons.service';
 
 @Component({
   selector: 'app-card-list',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-list.component.css']
 })
 export class CardListComponent {
+  @Input()
+  dadosAPI: any[] = [];
+
+  constructor(private pokemonsService: PokemonsService){}
+ngOnInit(): void{
+this.dadosAPI
+
+}
+
+
 
 }

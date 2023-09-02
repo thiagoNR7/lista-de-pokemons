@@ -1,2 +1,5 @@
-<app-card-list [dadosDaAPI]="dadosFilho"></app-card-list>
-<app-homepage></app-homepage>
+
+
+<div *ngIf=" dadosPai.length > 0 ">
+    <app-card-list [dadosPai]="dadosFilho"></app-card-list>
+</div>

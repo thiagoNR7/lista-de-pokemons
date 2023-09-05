@@ -7,15 +7,16 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
   styleUrls: ['./card-list.component.css'],
 })
 export class CardListComponent {
-  @Input()
-  dadosFilho: any[] = [];
-
-  constructor(private pokemonsService: PokemonsService){}
-ngOnInit(): void{
-this.dadosFilho
-
-}
-
-
-
+  @Input() dadosFilho: any[] = [];
+ detalhesPokemons: any[] = [];
+  constructor(private pokemonsService: PokemonsService) {}
+  ngOnInit(): void {
+    this.dadosFilho;
+    this.carregarDetalhes()
+  }
+  carregarDetalhes(){
+    for (var y = 0; y <this.dadosFilho.length; y++){
+      console.log(this.dadosFilho[y].name)
+    }
+  }
 }

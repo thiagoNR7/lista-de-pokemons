@@ -1,5 +1,6 @@
-
-<h1>Componente Filho</h1>
-    <ul>
-      <li></li>
-    </ul>
+<div *ngIf="dadosFilho.length > 0">
+<h1>componente filho</h1>
+  <ul>
+    <li *ngFor="let pokemon of dadosFilho">{{ pokemon.name }}</li>
+  </ul>
+</div>

@@ -12,8 +12,8 @@ export class HomepageComponent {
   dadosPai = [];
   constructor(private pokemonsService: PokemonsService) {}
   ngOnInit(): void {
-    this.pokemonsService.ListaPokemons().subscribe((response) => {
-      this.dadosPai;
+    this.pokemonsService.ListaPokemons().subscribe((response) =>{
+      this.dadosPai = response.results;
     });
   }
 }

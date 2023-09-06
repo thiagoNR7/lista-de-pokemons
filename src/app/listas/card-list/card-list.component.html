@@ -1,5 +1,9 @@
-
-<h1>Componente Filho</h1>
-    <ul>
-      <li></li>
+<div *ngIf="dadosFilho.length > 0">
+  <div *ngIf="detalhesPokemons.length > 0">
+    <h1>componente filho</h1>
+    <ul *ngFor="let pokemon of detalhesPokemons" >
+      <li>{{ pokemon.name}}</li>
+        <img src="{{pokemon.sprites.front_default}}" alt="">
     </ul>
+    </div>
+  </div>

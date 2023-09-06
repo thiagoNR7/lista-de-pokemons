@@ -17,13 +17,13 @@ export class CardListComponent {
   }
   carregarDetalhes(): void {
     for (var y = 0; y < this.dadosFilho.length; y++) {
-      console.log(this.dadosFilho[y].url);
+    
       let urlDados = this.dadosFilho[y].url;
       this.pokemonsService
         .CarregarDetalhesPorUrl(urlDados)
         .subscribe((response) => {
           this.detalhesPokemons.push(response);
-          console.log('atualizando array', this.detalhesPokemons);
+         
         }
         );
     }

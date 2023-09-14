@@ -23,6 +23,9 @@ export class CardListComponent {
         .CarregarDetalhesPorUrl(urlDados)
         .subscribe((response) => {
           this.detalhesPokemons.push(response);
+        console.log(response)
+        
+         
          
         }
         );

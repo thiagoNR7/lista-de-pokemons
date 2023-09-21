@@ -10,6 +10,8 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 export class CardListComponent {
   @Input() dadosFilho: any[] = [];
   detalhesPokemons: any[] = [];
+  ordenarSimples: any [] = [];
+  ordem: any;
   constructor(private pokemonsService: PokemonsService) {}
   ngOnInit(): void {
     this.dadosFilho;
@@ -17,18 +19,22 @@ export class CardListComponent {
   }
   carregarDetalhes(): void {
     for (var y = 0; y < this.dadosFilho.length; y++) {
-    
       let urlDados = this.dadosFilho[y].url;
       this.pokemonsService
         .CarregarDetalhesPorUrl(urlDados)
-        .subscribe((response) => {
+        .subscribe((response: any) => {
           this.detalhesPokemons.push(response);
-        console.log(response)
-        
-         
-         
-        }
-        );
+          console.log(response);
+        })
     }
+    
+
   }
-}
+   
+
+  
+
+
+  }
+  
+  

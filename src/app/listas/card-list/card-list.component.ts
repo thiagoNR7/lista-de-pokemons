@@ -10,8 +10,6 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 export class CardListComponent {
   @Input() dadosFilho: any[] = [];
   detalhesPokemons: any[] = [];
-  ordenarSimples: any [] = [];
-  ordem: any;
   constructor(private pokemonsService: PokemonsService) {}
   ngOnInit(): void {
     this.dadosFilho;
@@ -24,17 +22,15 @@ export class CardListComponent {
         .CarregarDetalhesPorUrl(urlDados)
         .subscribe((response: any) => {
           this.detalhesPokemons.push(response);
-          console.log(response);
-        })
+        });
+      function ordenarSimpleArray(response: any[]) {
+        response.sort((a: number, b: number) => a - b);
+      }
+
+      function ordenarObjectArray(response: any[]) {
+        response.sort((a: { id: number }, b: { id: number }) => a.id - b.id);
+      }
     }
-    
-
+    function main() {}
   }
-   
-
-  
-
-
-  }
-  
-  
+}

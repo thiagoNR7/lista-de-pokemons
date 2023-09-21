@@ -17,18 +17,20 @@ export class CardListComponent {
   }
   carregarDetalhes(): void {
     for (var y = 0; y < this.dadosFilho.length; y++) {
-    
       let urlDados = this.dadosFilho[y].url;
       this.pokemonsService
         .CarregarDetalhesPorUrl(urlDados)
-        .subscribe((response) => {
+        .subscribe((response: any) => {
           this.detalhesPokemons.push(response);
-        console.log(response)
-        
-         
-         
-        }
-        );
+        });
+      function ordenarSimpleArray(response: any[]) {
+        response.sort((a: number, b: number) => a - b);
+      }
+
+      function ordenarObjectArray(response: any[]) {
+        response.sort((a: { id: number }, b: { id: number }) => a.id - b.id);
+      }
     }
+    function main() {}
   }
 }

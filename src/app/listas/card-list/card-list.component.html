@@ -1,9 +1,27 @@
 <div *ngIf="dadosFilho.length > 0">
   <div *ngIf="detalhesPokemons.length > 0">
-    <h1>componente filho</h1>
-    <ul *ngFor="let pokemon of detalhesPokemons" >
-      <li>{{ pokemon.name}}</li>
-        <img src="{{pokemon.sprites.front_default}}" alt="">
-    </ul>
+    <div class="tudo">
+      <div *ngFor="let pokemon of detalhesPokemons" class="card">
+        <div class="titulo-superior">
+          <h3> Pokemon Name: {{pokemon.name}}</h3>
+          <h3>Order: #{{pokemon.order}}</h3>
+        </div>
+        <div class="imagem">
+          <img src="{{ pokemon.sprites.front_default }}" alt="" />
+        </div>
+        <div class="descricao">
+          <h2>Move Name</h2>
+          <br>
+          <br>
+          <span>base Experience: {{pokemon.base_experience}}</span>
+          <br />
+          <br>
+          <span>type:{{pokemon.types}}</span>
+          <br />
+          <br>
+          <span>weight: {{pokemon.weight}}</span>
+        </div>
+      </div>
     </div>
   </div>
+
